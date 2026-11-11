@@ -7,9 +7,11 @@ Python 3.10+ and the pinned packages in `requirements.txt` are required. The not
 ## Run
 
 1. Install dependencies: `pip install -r requirements.txt`.
-2. Open `problem1/problem1.ipynb` and `problem2/problem2.ipynb` in Jupyter or Colab.
-3. Each notebook's default `RUN_FULL_EXPERIMENTS = False` path runs the implementation tests and parameter-count checks. Set it to `True` to download the datasets and run the complete experiments. Run the Problem 1 notebook first; Problem 2 reuses its HAR loader.
+2. Open `problem1/problem1.ipynb` and `problem2/problem2.ipynb` in Jupyter or Colab. Both notebooks now embed their implementation and can be uploaded individually; they do not require the separate `solution.py` files.
+3. Each notebook's default `RUN_FULL_EXPERIMENTS = False` path runs the implementation tests and parameter-count checks. Set it to `True` to download the datasets and run the complete experiments. Run the Problem 1 notebook first; Problem 2 independently uses the same HAR splitting and normalization method.
 4. Run each notebook top to bottom. Training run rows are appended to root `results.csv`; plots are saved under each problem's `figures/`; the language-model run writes `problem2/generated_samples.txt`.
+
+For an explanation of the model choices, equations, tensor shapes, and experiment code flow, see [learn.md](./learn.md).
 
 The full run time should be measured on the submission T4 after enabling the complete sweeps. It is not reported as a measured value because the experiments have not yet been run in this environment. Full sweeps include 36 adding-problem runs, six HAR recurrent runs, 9 HAR Transformer runs, the character LM and its ablations; they may take several hours.
 
